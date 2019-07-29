@@ -1,0 +1,8 @@
+/bin
+/build
+/doc
+/images
+/.idea
+/.vscode
+exe.out
+raytracer.out
