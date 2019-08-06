@@ -27,11 +27,16 @@ Color BlinnPhongIntegrator::Li(const Ray &ray, const Scene &scene,
         VisibilityTester vt;
 
         // Getting information regarding the material
-        const BlinnPhongMaterial *bpm = dynamic_cast<const BlinnPhongMaterial*>( isect.mat );
+        /*const BlinnPhongMaterial *bpm = dynamic_cast<const BlinnPhongMaterial*>( isect.mat );
         Point _ka = bpm->ka();
         Point _kd = bpm->kd();
         Point _ks = bpm->ks();
-        real_value ge = bpm->glossiness();
+        real_value ge = bpm->glossiness();*/
+
+        Point _ka = Point(0.1, 0.1, 0.1);
+        Point _kd = Point(0.1, 0.9, 0.9);
+        Point _ks = Point(0.8, 0.8, 0.1);
+        real_value ge = 128;
 
         // Now we must iterate over the lights to calculate their contribution
         for (auto l : scene.lights)

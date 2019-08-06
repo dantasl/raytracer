@@ -275,9 +275,13 @@ void raytracer::Interpreter::interpret_primitives()
                 )
             );
 
-            std::shared_ptr<Shape> triangle(new Triangle(obj_mat, mesh, 1));
-            std::shared_ptr<Primitive> primitive(new GeometricPrimitive(triangle, obj_mat));
-            this->primitives.push_back(primitive);
+            // Adding the new triangles to the primitives
+            for (int i(0); i < ntriangles; ++i)
+            {
+                std::shared_ptr<Shape> triangle(new Triangle(obj_mat, mesh, i));
+                std::shared_ptr<Primitive> primitive(new GeometricPrimitive(triangle, obj_mat));
+                this->primitives.push_back(primitive);
+            }
         } 
     }
 }

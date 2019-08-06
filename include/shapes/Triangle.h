@@ -37,7 +37,7 @@ namespace raytracer
              * @param bfc 
              */
             Triangle(std::shared_ptr<Material> m, std::shared_ptr<TriangleMesh> mesh,
-                     int tri_id, bool bfc=true);
+                     int tri_id, bool bfc=false);
 
             /**
              * @brief Destroy the Triangle object
